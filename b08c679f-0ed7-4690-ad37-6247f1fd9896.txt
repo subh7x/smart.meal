@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SmartMeal — 7-Day Indian Meal Planner</title>
+  <meta name="description" content="Create a personalized 7-day Indian meal plan, grocery checklist and nutrition summary.">
+  <meta name="keywords" content="Indian meal planner, healthy meals, diet planner, grocery list">
+  <meta name="author" content="SmartMeal">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#198754">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SmartMeal — 7-Day Indian Meal Planner">
+  <meta property="og:description" content="Personalized Indian meal planning made practical.">
+  <meta property="og:url" content="https://yourusername.github.io/smartmeal/">
+  <meta property="og:image" content="https://yourusername.github.io/smartmeal/og-image.png">
+  <meta property="og:site_name" content="SmartMeal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SmartMeal — 7-Day Indian Meal Planner">
+  <meta name="twitter:description" content="Personalized Indian meal planning made practical.">
+  <meta name="twitter:image" content="https://yourusername.github.io/smartmeal/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-icon">🥗</span>
+      <div>
+        <strong>SmartMeal</strong>
+        <small>7-Day Indian Meal Planner</small>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <span class="badge">PERSONALIZED • INDIAN • PRACTICAL</span>
+      <h1>Eat better without complicated meal planning.</h1>
+      <p>Create your personalized 7-day Indian meal plan, grocery checklist and nutrition summary.</p>
+      <a class="hero-link" href="#profile">Build my plan <span>↓</span></a>
+    </section>
+
+    <section id="profile" class="card">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR PROFILE</span>
+          <h2>Tell us about yourself</h2>
+        </div>
+        <span class="step">Step 1 of 1</span>
+      </div>
+
+      <form id="profileForm" novalidate>
+        <div class="form-grid">
+          <label>Age <input id="age" type="number" min="13" max="100" placeholder="e.g. 28" required></label>
+          <label>Gender
+            <select id="gender">
+              <option value="male">Male</option><option value="female">Female</option><option value="other">Other</option>
+            </select>
+          </label>
+          <label>Height (cm) <input id="height" type="number" min="100" max="250" placeholder="e.g. 172" required></label>
+          <label>Weight (kg) <input id="weight" type="number" min="25" max="300" placeholder="e.g. 70" required></label>
+          <label>Goal
+            <select id="goal">
+              <option value="loss">Weight Loss</option><option value="maintenance">Maintenance</option>
+              <option value="gain">Weight Gain</option><option value="muscle">Muscle Gain</option>
+            </select>
+          </label>
+          <label>Dietary Preference
+            <select id="diet">
+              <option value="veg">Pure Veg</option><option value="nonveg">Non-Veg</option>
+              <option value="jain">Jain</option><option value="vegan">Vegan</option><option value="egg">Eggitarian</option>
+            </select>
+          </label>
+          <label>Regional Cuisine
+            <select id="region">
+              <option value="north">North Indian</option><option value="south">South Indian</option><option value="generic">Generic Indian</option>
+            </select>
+          </label>
+          <label>Daily Activity
+            <select id="activity"><option value="low">Low</option><option value="moderate" selected>Moderate</option><option value="high">High</option></select>
+          </label>
+          <label>Workout Schedule
+            <select id="workout"><option>None</option><option>Light</option><option>Moderate</option><option>High</option></select>
+          </label>
+          <label>Budget
+            <select id="budget"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select>
+          </label>
+          <label>Meals Per Day
+            <select id="mealCount"><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+          </label>
+          <label>Cooking Time
+            <select id="cooking"><option>15 minutes</option><option selected>30 minutes</option><option>60+ minutes</option></select>
+          </label>
+          <label class="wide">Foods You Like
+            <input id="likes" type="text" placeholder="e.g. paneer, dal, dosa">
+          </label>
+          <label class="wide">Foods to Avoid / Allergies
+            <input id="avoid" type="text" placeholder="e.g. peanuts, milk, paneer">
+          </label>
+          <label class="wide">Health Conditions
+            <textarea id="conditions" rows="2" placeholder="Optional — e.g. diabetes, high blood pressure"></textarea>
+          </label>
+        </div>
+        <div id="formError" class="error" role="alert"></div>
+        <button class="primary-button" type="submit">✨ Generate My 7-Day Plan</button>
+      </form>
+      <div id="healthNotice" class="notice" hidden>This meal plan is for general wellness and is not medical treatment. Please consult a qualified doctor or dietitian for condition-specific nutrition.</div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="section-heading result-heading">
+        <div><span class="eyebrow">YOUR PLAN</span><h2>Personalized nutrition summary</h2></div>
+        <div class="actions"><button class="secondary-button" id="pdfButton">📄 Download PDF</button><button class="secondary-button" id="whatsappButton">💬 Share on WhatsApp</button></div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="stat card"><span>🔥</span><small>Daily calories</small><strong id="calories">—</strong><em>estimated kcal</em></div>
+        <div class="stat card"><span>💪</span><small>Daily protein</small><strong id="protein">—</strong><em>estimated grams</em></div>
+        <div class="stat card"><span>⚖️</span><small>BMI</small><strong id="bmi">—</strong><em>general indicator</em></div>
+      </div>
+
+      <div class="card macros">
+        <div class="section-heading"><div><span class="eyebrow">DAILY TARGET</span><h2>Macro balance</h2></div><span id="macroTotal"></span></div>
+        <div id="macroBars"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-heading"><div><span class="eyebrow">MONDAY–SUNDAY</span><h2>7-day meal plan</h2></div></div>
+        <div id="mealPlan"></div>
+      </div>
+
+      <div class="card grocery-card">
+        <div class="section-heading"><div><span class="eyebrow">SHOPPING CHECKLIST</span><h2>Grocery list</h2></div><button class="text-button" id="resetGrocery">Reset list</button></div>
+        <div id="grocery"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>SmartMeal © 2026<br><span>Eat well. Stay consistent. 💚</span><small>Nutrition values are estimates for general wellness planning.</small></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
