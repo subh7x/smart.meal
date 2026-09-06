@@ -1,0 +1,23 @@
+{
+  "name": "SmartMeal \u2014 7-Day Indian Meal Planner",
+  "short_name": "SmartMeal",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4fff9",
+  "theme_color": "#0f9f6e",
+  "description": "Personalized 7-day Indian meal planner",
+  "icons": [
+    {
+      "src": "smartmeal-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "smartmeal-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

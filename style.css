@@ -1,0 +1,94 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#f4fff9 0%,#fffaf4 48%,#f7f4ff 100%);color:#17221b;line-height:1.5}
+button,input,select,textarea{font:inherit}
+button{transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+button:active{transform:scale(.98)}
+.app-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px max(14px,calc((100% - 1040px)/2));background:rgba(255,255,255,.90);backdrop-filter:blur(18px);border-bottom:1px solid rgba(18,58,39,.10)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.brand-logo{width:48px;height:48px;border-radius:14px;object-fit:cover;background:#fff;box-shadow:0 5px 18px rgba(15,100,68,.18)}
+.brand h1{font-size:19px;margin:0;font-weight:850;letter-spacing:-.02em}
+.brand p{margin:0;font-size:12px;color:#68756d}
+.header-actions{display:flex;align-items:center;gap:8px}
+.icon-btn,.restart-btn,.secondary-btn,.outline-btn{border:1px solid #d9e8df;background:#fff;color:#25342b;border-radius:12px;cursor:pointer}
+.icon-btn{width:42px;height:42px;font-size:18px}
+.restart-btn{height:42px;padding:0 12px;font-size:13px;font-weight:800}
+.restart-btn:hover,.secondary-btn:hover,.outline-btn:hover,.icon-btn:hover{box-shadow:0 6px 18px rgba(16,90,60,.12)}
+.container{width:min(1040px,calc(100% - 24px));margin:auto;padding:20px 0 50px}
+.hero{text-align:center;padding:10px 10px 24px}
+.hero-logo-wrap{width:92px;height:92px;margin:0 auto 12px;border-radius:25px;padding:5px;background:#fff;box-shadow:0 12px 30px rgba(18,91,62,.13)}
+.hero-logo{width:100%;height:100%;object-fit:cover;border-radius:20px}
+.eyebrow{display:inline-block;padding:6px 11px;border-radius:999px;background:#e4fff2;color:#087a50;font-size:10px;font-weight:900;letter-spacing:.14em}
+.hero h2{font-size:clamp(30px,6vw,50px);line-height:1.05;letter-spacing:-.04em;margin:11px 0}
+.hero h2 span{background:linear-gradient(90deg,#0a9a68,#f28b22);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#68756d;max-width:700px;margin:auto}
+.card{background:rgba(255,255,255,.90);border:1px solid rgba(20,74,51,.10);border-radius:22px;padding:22px;margin:16px 0;box-shadow:0 12px 34px rgba(23,72,50,.07)}
+.profile-card{border-top:4px solid #10a56d}
+.section-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
+.section-heading h2{font-size:21px;margin:0 0 3px}
+.section-heading p{font-size:13px;color:#718078;margin:0}
+.section-heading>span{font-size:25px}
+.grid{display:grid;gap:14px}
+.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+label{display:block;font-size:13px;font-weight:750;color:#36453c}
+input,select,textarea{display:block;width:100%;margin-top:7px;border:1px solid #d7e5dc;border-radius:12px;background:#fbfefc;color:#17221b;padding:12px 13px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#12a66d;box-shadow:0 0 0 4px rgba(18,166,109,.12)}
+textarea{resize:vertical}
+.form-actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}
+.primary-btn{border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(135deg,#0a9d68,#16b978);color:#fff;font-weight:850;cursor:pointer;box-shadow:0 9px 20px rgba(9,157,104,.25)}
+.outline-btn{padding:12px 16px;font-weight:800}
+.error{color:#dc2626;font-size:13px;min-height:18px;margin-bottom:0}
+.hidden{display:none!important}
+.stats{display:grid;gap:12px}
+.stats.four{grid-template-columns:repeat(4,1fr)}
+.stat{padding:16px;border-radius:16px;border:1px solid transparent}
+.stat span{display:block;font-size:12px;font-weight:700}
+.stat strong{display:block;margin-top:5px;font-size:18px;line-height:1.2}
+.stat-green{background:#eafff4;border-color:#baf1d6}.stat-green span{color:#087a50}
+.stat-orange{background:#fff4e8;border-color:#ffd9b0}.stat-orange span{color:#c86608}
+.stat-blue{background:#edf6ff;border-color:#cbe5ff}.stat-blue span{color:#2873b8}
+.stat-purple{background:#f5efff;border-color:#dfd0ff}.stat-purple span{color:#7245b6}
+.macro-row{display:grid;grid-template-columns:100px 1fr 95px;gap:12px;align-items:center;margin:13px 0;font-size:13px}
+.macro-bar{height:10px;border-radius:99px;background:#e8eee9;overflow:hidden}
+.macro-fill{height:100%;background:linear-gradient(90deg,#0aa36c,#f4a340);border-radius:99px}
+.macro-row>span{text-align:right;color:#5f6e65;font-weight:700}
+.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.day-card{border:1px solid #e1e9e3;border-radius:17px;overflow:hidden;background:#fff}
+.day-title{display:flex;justify-content:space-between;padding:13px 15px;background:linear-gradient(90deg,#e8fff4,#fff7eb);font-weight:850;color:#126544}
+.meal{padding:13px 15px;border-top:1px solid #e8eee9}
+.meal-top{display:flex;justify-content:space-between;gap:10px}
+.meal-name{font-weight:800;font-size:14px}
+.meal-time{font-size:11px;color:#0b9865;font-weight:850;white-space:nowrap}
+.meal-desc{font-size:11px;color:#77847c;margin:5px 0 0}
+.secondary-btn{padding:9px 13px;font-size:12px;font-weight:800}
+.grocery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grocery-category{border:1px solid #e1e9e3;border-radius:15px;padding:15px;background:#fff}
+.grocery-category h3{font-size:14px;margin:0 0 10px}
+.grocery-item{display:flex;align-items:center;gap:9px;padding:7px 0;font-weight:500;font-size:13px;color:#45534b}
+.grocery-item input{width:17px;height:17px;margin:0;accent-color:#0a9d68}
+.grocery-item.done span{text-decoration:line-through;color:#96a19a}
+footer{text-align:center;color:#849087;font-size:11px;padding:18px}
+.dark{background:linear-gradient(135deg,#09150f,#15120d 55%,#120d1a);color:#edf5ef}
+.dark .app-header,.dark .card,.dark .icon-btn,.dark .restart-btn,.dark .secondary-btn,.dark .outline-btn{background:rgba(20,31,25,.94);color:#edf5ef;border-color:#2b3d32}
+.dark .brand p,.dark .hero p,.dark .section-heading p,.dark .meal-desc,.dark .macro-row>span,.dark footer{color:#9eaaa2}
+.dark input,.dark select,.dark textarea{background:#0f1813;color:#edf5ef;border-color:#334138}
+.dark .stat{filter:saturate(.8)}
+.dark .days .day-card,.dark .grocery-category{background:#121c16;border-color:#2d3a31}
+.dark .day-title{background:#16311f;color:#86efac}
+.dark .meal{border-color:#2d3a31}
+.dark .grocery-item{color:#c8d2cc}
+.dark .macro-bar{background:#2c3730}
+@media(max-width:700px){
+  .container{width:min(100% - 16px,1040px);padding-top:12px}
+  .two,.stats.four,.days,.grocery-grid{grid-template-columns:1fr}
+  .card{padding:17px;border-radius:18px}
+  .hero h2{font-size:32px}
+  .macro-row{grid-template-columns:82px 1fr 75px}
+  .app-header{padding:9px 10px}
+  .brand-logo{width:43px;height:43px}
+  .brand h1{font-size:17px}
+  .brand p{font-size:10px}
+  .restart-btn{padding:0 9px}.restart-btn span{display:none}
+  .form-actions{grid-template-columns:1fr}
+  .hero-logo-wrap{width:78px;height:78px}
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f9f6e">
+<meta name="description" content="SmartMeal - personalized 7-day Indian meal planner">
+<link rel="icon" type="image/png" href="favicon-64.png">
+<link rel="apple-touch-icon" href="smartmeal-icon-192.png">
+<link rel="manifest" href="manifest.json">
+<title>SmartMeal — 7-Day Indian Meal Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="app-header">
+  <a class="brand" href="#" aria-label="SmartMeal home">
+    <img class="brand-logo" src="smartmeal-logo.png" alt="SmartMeal logo">
+    <div><h1>SmartMeal</h1><p>7-Day Indian Meal Planner</p></div>
+  </a>
+  <div class="header-actions">
+    <button id="restart-btn" class="restart-btn" type="button" title="Clear all profile and plan data">↻ <span>Restart</span></button>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+<section class="hero">
+  <div class="hero-logo-wrap"><img src="smartmeal-logo.png" class="hero-logo" alt="SmartMeal"></div>
+  <span class="eyebrow">SMART • PERSONALIZED • INDIAN</span>
+  <h2>Build a meal plan that fits <span>your life.</span></h2>
+  <p>Choose your diet preference and SmartMeal creates a practical 7-day Indian meal plan around your goals.</p>
+</section>
+
+<section class="card profile-card">
+  <div class="section-heading">
+    <div><h2>Your Profile</h2><p>Tell us a little about yourself.</p></div><span>👤</span>
+  </div>
+  <form id="user-form">
+    <div class="grid two">
+      <label>Age<input id="age" type="number" min="13" max="100" required></label>
+      <label>Gender<select id="gender"><option>Male</option><option>Female</option></select></label>
+      <label>Height (cm)<input id="height" type="number" min="100" max="250" required></label>
+      <label>Weight (kg)<input id="weight" type="number" min="25" max="300" required></label>
+      <label>Goal<select id="goal"><option>Weight Loss</option><option>Maintain Weight</option><option>Weight Gain</option><option>Muscle Gain</option></select></label>
+      <label>Dietary Preference<select id="dietary-preference">
+        <option>Pure Veg</option><option>Vegan</option><option>Eggitarian</option><option>Non-Veg</option><option>Jain</option>
+      </select></label>
+      <label>Regional Cuisine<select id="regional-cuisine"><option>North Indian</option><option>South Indian</option><option>Generic Indian</option></select></label>
+      <label>Activity Level<select id="activity"><option>Low</option><option>Moderate</option><option>High</option></select></label>
+      <label>Meals Per Day<select id="meals-per-day"><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option></select></label>
+      <label>Cooking Time<select id="cooking-time"><option>15 minutes</option><option selected>30 minutes</option><option>45 minutes</option><option>60+ minutes</option></select></label>
+      <label>Workout Schedule<select id="workout-schedule"><option>None</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label>
+      <label>Weekly Budget<select id="budget"><option>₹1,000–₹1,500</option><option selected>₹1,500–₹2,500</option><option>₹2,500–₹4,000</option><option>₹4,000+</option></select></label>
+    </div>
+    <div class="grid two">
+      <label>Foods You Like<input id="likes" placeholder="e.g. paneer, rice, mango"></label>
+      <label>Allergies / Foods to Avoid<input id="allergies" placeholder="e.g. peanuts, dairy"></label>
+    </div>
+    <label>Health Conditions / Notes<textarea id="health-conditions" rows="3" placeholder="Optional notes"></textarea></label>
+    <div class="form-actions">
+      <button class="primary-btn" type="submit">✨ Generate My 7-Day Plan</button>
+      <button id="restart-form-btn" class="outline-btn" type="button">↻ Clear & Restart</button>
+    </div>
+    <p id="error-message" class="error"></p>
+  </form>
+</section>
+
+<section id="nutrition-summary" class="card result-card hidden">
+  <div class="section-heading"><div><h2>Nutrition Summary</h2><p id="nutrition-note"></p></div><span>📊</span></div>
+  <div class="stats four">
+    <div class="stat stat-green"><span>🔥 Calories</span><strong id="calories">—</strong></div>
+    <div class="stat stat-orange"><span>💪 Protein</span><strong id="protein">—</strong></div>
+    <div class="stat stat-blue"><span>⚖️ BMI</span><strong id="bmi">—</strong></div>
+    <div class="stat stat-purple"><span>🎯 Goal</span><strong id="goal-label">—</strong></div>
+  </div>
+</section>
+
+<section id="daily-summary" class="card result-card hidden">
+  <div class="section-heading"><div><h2>Daily Macro Targets</h2><p>Estimated targets based on your profile.</p></div><span>📈</span></div>
+  <div id="macros"></div>
+</section>
+
+<section id="meal-plan" class="card result-card hidden">
+  <div class="section-heading"><div><h2>7-Day Meal Plan</h2><p id="meal-plan-note">Balanced Indian meals with your selected diet.</p></div><span>🍱</span></div>
+  <div id="days" class="days"></div>
+</section>
+
+<section id="grocery-checklist" class="card result-card hidden">
+  <div class="section-heading"><div><h2>Grocery Checklist</h2><p>Tick items as you shop. Your checklist is saved on this device.</p></div><button id="reset-grocery-list" class="secondary-btn" type="button">Reset Checklist</button></div>
+  <div id="grocery-category" class="grocery-grid"></div>
+</section>
+
+<footer>SmartMeal provides general nutrition estimates, not medical advice.</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
